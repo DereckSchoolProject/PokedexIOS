@@ -15,8 +15,11 @@ import Kingfisher
 class PokemonViewController: UIViewController {
 
     var pokemon: Pokemon?
-    @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var imgBack: UIImageView!
+
+    @IBOutlet weak var front: UIImageView!
+    @IBOutlet weak var frontShiny: UIImageView!
+    @IBOutlet weak var back: UIImageView!
+    @IBOutlet weak var backShiny: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +31,13 @@ class PokemonViewController: UIViewController {
             
             let urlFront = json!["sprites"]["front_default"].string!
             let urlFrontShiny = json!["sprites"]["front_shiny"].string!
+            let urlBack = json!["sprites"]["back_default"].string!
+            let urlBackShiny = json!["sprites"]["back_shiny"].string!
 
-            self.img.kf.setImage(with: URL(string: urlFront))
-            self.imgBack.kf.setImage(with: URL(string: urlFrontShiny))
+            self.front.kf.setImage(with: URL(string: urlFront))
+            self.frontShiny.kf.setImage(with: URL(string: urlFrontShiny))
+            self.back.kf.setImage(with: URL(string: urlBack))
+            self.backShiny.kf.setImage(with: URL(string: urlBackShiny))
         }
     }
 }
