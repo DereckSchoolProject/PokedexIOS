@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = "\(pokedexList[indexPath.row].name)"
+        cell?.textLabel?.text = "\(indexPath.row + 1) - \(pokedexList[indexPath.row].name)"
 
         return cell!
     }
